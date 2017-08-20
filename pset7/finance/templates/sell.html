@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Stock
+{% endblock %}
+
+{% block main %}
+<h6>Please enter symbol of stock to sell.</h6>
+    <form action="{{ url_for('sell') }}" method="POST">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="stock" placeholder="Symbol of Stock to sell" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Number of Shares to sell" type="number"/>
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">SELL SHARES</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+{% endblock %}
+
+    <p>
+    Your user_id is {{self.user_id}} <br><br>
+    Stock: {{ self.stock }} ({{ self.shares }}) <br><br> 
+    Price ${{self.price}}<br><br>
+    Your available cash is: ${{self.cash}}
+    </p>

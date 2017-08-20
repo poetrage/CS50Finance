@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <p>
+    You searched for stock symbol: {{quote.symbol}} <br><br>
+    Stock: {{ quote.name }} ({{ quote.symbol }}) <br><br> 
+    Price ${{quote.price}}
+    </p>
+{% endblock %}
+

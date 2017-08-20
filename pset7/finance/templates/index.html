@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+
+<h3>Portfolio</h3>
+
+    <table class="table" style="width:75%" align="center">
+      <th>Total Value: {{ total }}</th>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Current Price</th>
+
+        <th>Current Total Value</th>
+
+        
+      </tr>
+   {% for current_row in current_rows %}
+      <tr>
+        <td>{{ current_row.symbol }}</td>
+        <td>{{ current_row.name }}</td>
+        <td>{{ current_row.shares }}</td>
+        <td>{{ current_row.current_price }}</td>
+        <td>{{ current_row.stock_value }}</td>
+        
+    {% endfor %}
+
+
+  {% endblock %}
+  
+  
